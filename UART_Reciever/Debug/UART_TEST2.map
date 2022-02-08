@@ -1,0 +1,159 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.1                     
+******************************************************************************
+>> Linked Mon Jan 18 15:48:57 2021
+
+OUTPUT FILE NAME:   <UART_TEST2.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 000006f5
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000734  0003f8cc  R  X
+  SRAM                  20000000   00008000  00000200  00007e00  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000734   00000734    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    000004c8   000004c8    r-x .text
+20000000    20000000    00000200   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    000004c8     
+                  0000026c    000003c8     UART.obj (.text)
+                  00000634    0000007c     PLL.obj (.text)
+                  000006b0    00000044     UARTTestMain.obj (.text)
+                  000006f4    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  00000720    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  0000072c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000730    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       UART.obj                       968    0         0      
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       PLL.obj                        124    0         0      
+       UARTTestMain.obj               68     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         1172   620       0      
+                                                              
+    D:\ti\ccs1011\ccs\tools\compiler\ti-cgt-arm_20.2.1.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       boot_cortex_m.c.obj            44     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         52     0         0      
+                                                              
+       Stack:                         0      0         512    
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   1224   620       512    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                   
+-------   ----                   
+00000731  C$$EXIT                
+000006b1  OutCRLF                
+00000635  PLL_Init               
+00000721  ResetISR               
+00000343  UART5_Transmitter      
+0000035f  UART_InChar            
+000005b1  UART_InString          
+000003ad  UART_InUDec            
+00000461  UART_InUHex            
+0000026d  UART_Init              
+00000373  UART_OutChar           
+0000038f  UART_OutString         
+00000431  UART_OutUDec           
+00000525  UART_OutUHex           
+20000200  __STACK_END            
+00000200  __STACK_SIZE           
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+00000000  __TI_static_base__     
+ffffffff  __binit__              
+ffffffff  __c_args__             
+UNDEFED   __mpu_init             
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+000006f5  _c_int00_noinit_noargs 
+0000072d  _system_pre_init       
+00000731  abort                  
+ffffffff  binit                  
+00000000  g_pfnVectors           
+000006c1  main                   
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                   
+-------   ----                   
+00000000  __TI_static_base__     
+00000000  g_pfnVectors           
+00000200  __STACK_SIZE           
+0000026d  UART_Init              
+00000343  UART5_Transmitter      
+0000035f  UART_InChar            
+00000373  UART_OutChar           
+0000038f  UART_OutString         
+000003ad  UART_InUDec            
+00000431  UART_OutUDec           
+00000461  UART_InUHex            
+00000525  UART_OutUHex           
+000005b1  UART_InString          
+00000635  PLL_Init               
+000006b1  OutCRLF                
+000006c1  main                   
+000006f5  _c_int00_noinit_noargs 
+00000721  ResetISR               
+0000072d  _system_pre_init       
+00000731  C$$EXIT                
+00000731  abort                  
+20000000  __stack                
+20000000  __start___llvm_prf_cnts
+20000000  __stop___llvm_prf_cnts 
+20000200  __STACK_END            
+20000200  __STACK_TOP            
+ffffffff  __TI_pprof_out_hndl    
+ffffffff  __TI_prof_data_size    
+ffffffff  __TI_prof_data_start   
+ffffffff  __binit__              
+ffffffff  __c_args__             
+ffffffff  binit                  
+UNDEFED   __mpu_init             
+
+[33 symbols]
